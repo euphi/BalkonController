@@ -1,6 +1,7 @@
 #include <Homie.h>
 
 
+
 #include "pcf8574.h"
 #include "Safety.h"
 #include "ValveNode.h"
@@ -21,8 +22,6 @@ bool automatik = true;
 ValveNode valves(ioext);
 RGBWNode ledstrip;
 SensorNode sensor;
-
-unsigned long lastLoop2000ms = 0;
 
 
 bool pumpeHandler(String value) {
@@ -66,15 +65,10 @@ void setup() {
 
 	pumpe.subscribe("on", pumpeHandler);
 	automode.subscribe("on", autoHandler);
-
-	sensor.setup();
-	valves.setup();
-	ledstrip.setup();
 }
 
 void loop() {
 //	safety.loop();
 	Homie.loop();
-	sensor.loop();
 	//bewaesserung.cycle();
 }

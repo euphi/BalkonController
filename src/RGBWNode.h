@@ -23,9 +23,9 @@ class RGBWNode: public HomieNode {
 		REDPIN = 12, GREENPIN = 13, BLUEPIN = 14, WHITEPIN = 16
 	};
 
-	const uint8 rgbw_pins[4] = { REDPIN, GREENPIN, BLUEPIN, WHITEPIN };
+	const uint8_t rgbw_pins[4] = { REDPIN, GREENPIN, BLUEPIN, WHITEPIN };
 	const char rgbw_id[4] = {'r', 'g', 'b', 'w'};
-	uint16 rgbw_values[4] = { 0, 0, 0, 0 };
+	uint16_t rgbw_values[4] = { 0, 0, 0, 0 };
 
     virtual bool InputHandler(String property, String value);
 
