@@ -1,0 +1,43 @@
+/*
+ * RGBWNode.h
+ *
+ *  Created on: 16.05.2016
+ *      Author: ian
+ */
+
+#ifndef SRC_RGBWNODE_H_
+#define SRC_RGBWNODE_H_
+
+#include <HomieNode.hpp>
+
+class RGBWNode: public HomieNode {
+
+	static const float percent_to_pwm;
+
+
+	enum RGB_MAP {
+		R, G, B, W
+	};
+
+	enum RGBW_PINMAP {
+		REDPIN = 12, GREENPIN = 13, BLUEPIN = 14, WHITEPIN = 16
+	};
+
+	const uint8 rgbw_pins[4] = { REDPIN, GREENPIN, BLUEPIN, WHITEPIN };
+	const char rgbw_id[4] = {'r', 'g', 'b', 'w'};
+	uint16 rgbw_values[4] = { 0, 0, 0, 0 };
+
+    virtual bool InputHandler(String property, String value);
+
+private:
+    void updateLEDs() const;
+    void updateLED(uint8_t id) const;
+    void PublishState(uint8_t id) const;
+
+
+public:
+	RGBWNode();
+	void setup();
+};
+
+#endif /* SRC_RGBWNODE_H_ */
