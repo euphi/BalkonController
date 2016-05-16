@@ -154,4 +154,5 @@
  .pioenvs/esp12e/Sensors_ID578/Thermometer.h \
  .pioenvs/esp12e/Sensors_ID578/BMP085.h \
  .pioenvs/esp12e/Sensors_ID578/I2CDevice.h src/pcf8574.h src/Safety.h \
- src/BewaesserungFSM.h .pioenvs/esp12e/Automaton_ID545/Automaton.h
+ src/ValveNode.h src/RGBWNode.h src/BewaesserungFSM.h \
+ .pioenvs/esp12e/Automaton_ID545/Automaton.h

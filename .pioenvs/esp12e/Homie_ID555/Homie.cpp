@@ -131,6 +131,7 @@ void HomieClass::registerNode(HomieNode& node) {
   this->_checkBeforeSetup(F("registerNode"));
   if (this->_interface.registeredNodesCount > MAX_REGISTERED_NODES_COUNT) {
     Serial.println(F("✖ register(): the max registered nodes count has been reached"));
+    Serial.flush();
     abort();
   }
 
