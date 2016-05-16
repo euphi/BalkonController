@@ -1,0 +1,17 @@
+{
+  "name": "Balkoncontroller",
+  "device_id": "balkctrl",
+  "wifi": {
+    "ssid": "KDG-49D6B",
+    "password": "Rd2Ew8Zvjh6E"
+  },
+  "mqtt": {
+    "host": "192.168.0.220",
+    "port": 1883,
+    "base_topic": "devices/",
+    "auth": false,
+  },
+  "ota": {
+    "enabled": false
+  }
+}
