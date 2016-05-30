@@ -10,6 +10,9 @@
 
 #include "HomieNode.hpp"
 #include "pcf8574.h"
+#include "BewaesserungFSM.h"
+
+#include <array>
 
 
 class ValveNode: public HomieNode {
@@ -17,17 +20,21 @@ class ValveNode: public HomieNode {
 	  virtual bool InputHandler(String property, String value);
 
 private:
-	  bool m_valves[4] = { false, false, false, false };
+	  std::array<bool, 4>  m_valves { { false, false, false, false } };
 	  void updateValves();
 	  void PublishStates() const;
 	  void PublishState(uint8_t valve) const;
 
 	  PCF8574& m_ioext;
+	  bool updateNeccessary;
 
 public:
 	ValveNode(PCF8574& ioext);
-	virtual ~ValveNode();
 	void setup();
+	void loop();
+	void On(uint8_t id);
+	void Off(uint8_t id);
+	void AllOff();
 };
 
 #endif /* SRC_VALVENODE_H_ */

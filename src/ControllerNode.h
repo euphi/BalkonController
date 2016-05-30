@@ -13,18 +13,17 @@
 
 class ControllerNode: public HomieNode {
 
+	// MQTT-Property Strings for ControllerNode
 	enum Properties {Mode, State, Pumpe, MainValve, LAST_Prop};
 	const String PropString[LAST_Prop] = {"Mode", "State", "Pumpe", "MainValve"};
 
-	enum Modes {Manual, Full_Auto, Off, Last_Mode};
-	const char mode_char[Last_Mode] = { 'm', 'a', '0' };
-
-
-
-
+	// MQTT-Identifier for Property 'Mode'
+	enum Modes {Invalid=0, Manual=1, Full_Auto, OneRun, Off, Last_Mode};
+	const char mode_char[Last_Mode] = { 'm', 'a', '1', '0' };
 
 private:
 	Modes mode;
+	Modes mode_1run_saved_state;
 	bool pumpe;
 	bool valve;
 
@@ -34,12 +33,21 @@ private:
 	bool setPumpe(String& value);
 	bool setMainValve(String& value);
 
+	bool startOneRun();
+    void PumpeSet(bool on);
+    void ValveSet(bool on);
+
 public:
 	ControllerNode(PCF8574& ioext);
 
 	virtual void loop();
 	virtual void setup();
     virtual bool InputHandler(String property, String value);
+
+    void PumpeOn();
+    void PumpeOff();
+    void ValveOn();
+    void ValveOff();
 
 
 };

@@ -8,15 +8,10 @@
 #include "ValveNode.h"
 #include "Homie.hpp"
 
-ValveNode::ValveNode(PCF8574& ioext): HomieNode("Ventil", "4Rel"), m_ioext(ioext) {
+ValveNode::ValveNode(PCF8574& ioext): HomieNode("Ventil", "4Rel"), m_ioext(ioext), updateNeccessary(false) {
 	_subscribeToAll = true;
 
 }
-
-ValveNode::~ValveNode() {
-	// empty destructor
-}
-
 
 bool ValveNode::InputHandler(String property, String value) {
 	Serial.printf("ValveNode::InputHandler received  property %s (value=%s).\n", property.c_str(), value.c_str());
@@ -81,4 +76,46 @@ void ValveNode::updateValves() {
 void ValveNode::setup() {
 	updateValves();
 	PublishStates();
+}
+
+void ValveNode::loop() {
+	if (updateNeccessary) {
+		updateValves();
+		updateNeccessary=false;
+	}
+}
+
+void ValveNode::On(uint8_t id) {
+	id--;
+	if (id < sizeof(m_valves) )
+	{
+		m_valves[id] = true;
+		updateNeccessary = true;
+	}
+	else
+	{
+		Serial.println("ValveNode::On: Invalid id");
+	}
+}
+
+void ValveNode::Off(uint8_t id) {
+	id--;
+	if (id < sizeof(m_valves) )
+	{
+		m_valves[id] = false;
+		updateNeccessary = true;
+	}
+	else
+	{
+		Serial.println("ValveNode::On: Invalid id");
+	}
+}
+
+void ValveNode::AllOff() {
+	Serial.println("ValveNode::AllOff()");
+	for (uint_fast8_t i; i < sizeof(m_valves); i++) {
+		m_valves[i] = false;
+		updateValves();
+	}
+
 }

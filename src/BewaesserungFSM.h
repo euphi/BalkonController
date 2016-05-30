@@ -11,11 +11,15 @@
 #include "pcf8574.h"
 #include <Automaton.h>
 
-class BewaesserungFSM: public Machine {
-public:
-	BewaesserungFSM(PCF8574& _extio);
+class ControllerNode;
+class ValveNode;
 
-	virtual ~BewaesserungFSM();
+class BewaesserungFSM: public Machine {
+private:
+	ControllerNode* mp_ctrl;
+	ValveNode*	mp_valves;
+public:
+	BewaesserungFSM();
 
 	atm_timer_millis timer;
 
@@ -26,15 +30,17 @@ public:
 		EV_START, EV_TIMER, ELSE
 	}; // EVENTS
 
-	enum { ACT_S1, ACT_S2, ACT_S3, ACT_S4, ACT_OFF }; // ACTIONS
+	enum { ACT_S1, ACT_S2, ACT_S3, ACT_S4, ACT_S1_OFF, ACT_S2_OFF, ACT_S3_OFF, ACT_S4_OFF, ACT_OFF }; // ACTIONS
 
-	PCF8574& extio;
-
-
-	BewaesserungFSM& begin(PCF8574& extio);
+	BewaesserungFSM& begin(ControllerNode& controller, ValveNode& valves);
 	int event(int id);
 	void action(int id);
 
+	BewaesserungFSM& onSwitch(swcb_sym_t switch_callback);
+
 };
+
+extern BewaesserungFSM bew_fsm;
+
 
 #endif /* SRC_BEWAESSERUNGFSM_H_ */

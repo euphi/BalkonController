@@ -22,11 +22,11 @@ class Safety {
 private:
 	PCF8574& ioext;
 	bool initialized;
+	uint16_t m_last;
 
 
 public:
 	Safety(PCF8574& io);
-	virtual ~Safety();
 	void init();
 	void loop();
 };
