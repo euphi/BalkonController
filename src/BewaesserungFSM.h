@@ -26,6 +26,9 @@ public:
 	enum {
 		AUS, S1, S2, S3, S4
 	}; // STATES
+
+	uint16_t state_duration[S4];
+
 	enum {
 		EV_START, EV_TIMER, ELSE
 	}; // EVENTS

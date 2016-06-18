@@ -43,8 +43,8 @@ bool ControllerNode::startOneRun() {
 
 
 bool ControllerNode::setMode(String& value) {
-	uint_fast8_t i = 0;
-	for (i = (uint_fast8_t)Modes::Manual; i < (uint_fast8_t)Modes::Last_Mode; i++)
+	int_fast8_t i = 0;
+	for (i = (int_fast8_t)Modes::Manual; i < (int_fast8_t)Modes::Last_Mode; i++)
 		if (value[0] == mode_char[i])
 			break;
 	if (mode == Modes::Last_Mode)

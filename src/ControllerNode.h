@@ -18,7 +18,7 @@ class ControllerNode: public HomieNode {
 	const String PropString[LAST_Prop] = {"Mode", "State", "Pumpe", "MainValve"};
 
 	// MQTT-Identifier for Property 'Mode'
-	enum Modes {Invalid=0, Manual=1, Full_Auto, OneRun, Off, Last_Mode};
+	enum Modes {Invalid=-1, Manual=0, Full_Auto, OneRun, Off, Last_Mode};
 	const char mode_char[Last_Mode] = { 'm', 'a', '1', '0' };
 
 private:

@@ -6,6 +6,7 @@
 #include "RGBWNode.h"
 #include "SensorNode.h"
 #include "ControllerNode.h"
+//#include "ConfigurationNode.h"
 
 PCF8574 ioext(0x20);
 Safety safety(ioext);
@@ -25,6 +26,7 @@ void setup() {
 	Homie.registerNode(valves);
 	Homie.registerNode(sensor);
 	Homie.registerNode(controller);
+//	Homie.registerNode(config);
 
 	Homie.setup();
 	bew_fsm.begin(controller, valves);

@@ -10,6 +10,7 @@
 #include "ControllerNode.h"
 #include "ValveNode.h"
 
+#include <EEPROM.h>
 
 BewaesserungFSM::BewaesserungFSM()
 {
@@ -25,6 +26,14 @@ BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& v
 	/* S2   */		ACT_S2,		-1,		ACT_S2_OFF,	-1,		S3,			-1,
 	/* S3   */		ACT_S3, 	-1,		ACT_S3_OFF, -1,		S4,			-1,
 	/* S4   */		ACT_S4,		-1,		ACT_S4_OFF,	-1,		AUS,		-1, };
+
+	uint16_t width = ELSE + 2 + ATM_ON_EXIT;
+	for (uint_fast8_t i = S1; i <= S4; i++) {
+		uint16_t duration = 0;
+		EEPROM.get(i-1, duration);
+		Serial.printf("Read EEPROM for state %x duration: %is\n.", i, duration);
+		state_duration[i-1] = duration;
+	}
 
 	Machine::begin(state_table, ELSE);
 	mp_ctrl = &controller;
@@ -42,23 +51,28 @@ int BewaesserungFSM::event(int id) {
 }
 
 void BewaesserungFSM::action(int id) {
+	uint16_t duration = 0;
 	switch (id) {
 	case ACT_S1:
-		mp_valves->On(1);
+		duration = state_duration[S1-1];
 		mp_ctrl->PumpeOn();
-		timer.set(2000);
+		if (duration > 0) mp_valves->On(1);
+		timer.set(duration);
 		break;
 	case ACT_S2:
-		mp_valves->On(2);
-		timer.set(2000);
+		duration = state_duration[S2-1];
+		if (duration > 0) mp_valves->On(2);
+		timer.set(duration);
 		break;
 	case ACT_S3:
-		mp_valves->On(3);
-		timer.set(2000);
+		duration = state_duration[S3-1];
+		if (duration > 0) mp_valves->On(3);
+		timer.set(duration);
 		break;
 	case ACT_S4:
-		mp_valves->On(4);
-		timer.set(2000);
+		duration = state_duration[S4-1];
+		if (duration > 0) mp_valves->On(4);
+		timer.set(duration);
 		break;
 	case ACT_S1_OFF:
 		mp_valves->Off(1);
