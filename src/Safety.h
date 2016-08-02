@@ -17,12 +17,14 @@
 #define SRC_SAFETY_H_
 
 #include "pcf8574.h"
+#include "Automaton.h"
 
 class Safety {
 private:
 	PCF8574& ioext;
 	bool initialized;
-	uint16_t m_last;
+	Atm_timer timer;
+
 
 
 public:

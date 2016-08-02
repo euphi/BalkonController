@@ -14,8 +14,9 @@
 
 BewaesserungFSM::BewaesserungFSM()
 {
-	class_label ="ABLAUF";
-	timer.begin(this,ATM_COUNTER_OFF);
+	//class_label ="ABLAUF";
+	//timer.begin(this,ATM_COUNTER_OFF);
+	timer.set(ATM_COUNTER_OFF);
 }
 
 BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& valves) {
@@ -45,7 +46,7 @@ BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& v
 int BewaesserungFSM::event(int id) {
 	switch (id) {
 	case EV_TIMER:
-		return timer.expired();
+		return timer.expired(this);
 	}
 	return 0;
 }
@@ -96,8 +97,8 @@ void BewaesserungFSM::action(int id) {
 	}
 }
 
-BewaesserungFSM& BewaesserungFSM::onSwitch(swcb_sym_t switch_callback) {
-	  Machine::onSwitch( switch_callback, "AUS\0S1\0S2\0S3\0S4", "EV_START\0EV_TIMER\0ELSE" );
+BewaesserungFSM& BewaesserungFSM::onSwitch() {
+	  Machine::setTrace(&Serial, atm_serial_debug::trace, "Ablaufsteuerung\0EV_START\0EV_TIMER\0ELSE\0AUS\0S1\0S2\0S3\0S4" );
 	  return *this;
 }
 

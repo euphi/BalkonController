@@ -39,7 +39,7 @@ public:
 	int event(int id);
 	void action(int id);
 
-	BewaesserungFSM& onSwitch(swcb_sym_t switch_callback);
+	BewaesserungFSM& onSwitch();
 
 };
 
