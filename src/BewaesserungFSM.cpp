@@ -9,14 +9,21 @@
 
 #include "ControllerNode.h"
 #include "ValveNode.h"
+#include "ConfigurationNode.h"
 
 #include <EEPROM.h>
 
 BewaesserungFSM::BewaesserungFSM()
 {
-	class_label ="ABLAUF";
-	timer.begin(this,ATM_COUNTER_OFF);
+	//class_label ="ABLAUF";
+	//timer.begin(this,ATM_COUNTER_OFF);
+	timer.set(ATM_COUNTER_OFF);
 }
+	timer.set(ATM_COUNTER_OFF);
+}
+
+uint16_t BewaesserungFSM::state_duration[S4] = {5000, 2000, 6000, 3000};
+
 
 BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& valves) {
 	const static state_t state_table[] PROGMEM = {
@@ -42,10 +49,13 @@ BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& v
 	return *this;
 }
 
+	return *this;
+}
+
 int BewaesserungFSM::event(int id) {
 	switch (id) {
 	case EV_TIMER:
-		return timer.expired();
+		return timer.expired(this);
 	}
 	return 0;
 }
@@ -91,16 +101,18 @@ void BewaesserungFSM::action(int id) {
 		mp_ctrl->PumpeOff();
 		timer.set(ATM_COUNTER_OFF);
 		break;
+	case -1:
+		return; // -1: No action
 	default:
-		Serial.printf("BewaesserungFSM::action: Invalid id %x\n", id);
+		ConfigurationNode::logf(__PRETTY_FUNCTION__, ConfigurationNode::ERROR,"Invalid id %x", id);
+		return;
 	}
-}
-
-BewaesserungFSM& BewaesserungFSM::onSwitch(swcb_sym_t switch_callback) {
-	  Machine::onSwitch( switch_callback, "AUS\0S1\0S2\0S3\0S4", "EV_START\0EV_TIMER\0ELSE" );
+BewaesserungFSM& BewaesserungFSM::onSwitch() {
+	  Machine::setTrace(&Serial, atm_serial_debug::trace, "Ablaufsteuerung\0EV_START\0EV_TIMER\0ELSE\0AUS\0S1\0S2\0S3\0S4" );
 	  return *this;
 }
 
 
 
 BewaesserungFSM bew_fsm;
+_fsm;

@@ -27,7 +27,7 @@ public:
 		AUS, S1, S2, S3, S4
 	}; // STATES
 
-	uint16_t state_duration[S4];
+	static uint16_t state_duration[S4];
 
 	enum {
 		EV_START, EV_TIMER, ELSE
@@ -39,7 +39,7 @@ public:
 	int event(int id);
 	void action(int id);
 
-	BewaesserungFSM& onSwitch(swcb_sym_t switch_callback);
+	BewaesserungFSM& onSwitch();
 
 };
 

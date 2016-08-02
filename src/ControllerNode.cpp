@@ -8,6 +8,7 @@
 #include "ControllerNode.h"
 #include "Homie.hpp"
 #include "BewaesserungFSM.h"
+#include "ConfigurationNode.h"
 
 ControllerNode::ControllerNode(PCF8574& ioext) :
 		HomieNode("Controller", "controller",
@@ -35,9 +36,7 @@ void ControllerNode::setup() {
 
 bool ControllerNode::startOneRun() {
 	mode_1run_saved_state = mode;
-	mode = Modes::OneRun;
 	bew_fsm.trigger(BewaesserungFSM::EV_START);
-	Homie.setNodeProperty(*this, PropString[State], String(mode_char[mode]), true);
 	return true;
 }
 
@@ -47,13 +46,14 @@ bool ControllerNode::setMode(String& value) {
 	for (i = (int_fast8_t)Modes::Manual; i < (int_fast8_t)Modes::Last_Mode; i++)
 		if (value[0] == mode_char[i])
 			break;
-	if (mode == Modes::Last_Mode)
+	if (i == Modes::Last_Mode)
 		return false;
-	if (mode == Modes::OneRun)
+	if (i == Modes::OneRun)
 	{
 		startOneRun();
 	}
 	mode = (Modes)i;
+	Homie.setNodeProperty(*this, PropString[State], String(mode_char[mode]), true);
 	Serial.printf("Mode set to %c [%x].\n", mode_char[i], i);
 	return true;
 }
@@ -112,7 +112,7 @@ void ControllerNode::PumpeSet(bool on) {
 		Homie.setNodeProperty(*this, PropString[Properties::Pumpe], on?"true":"false");
 	}
 	else {
-		Serial.printf("ERROR writing Pumpe on IO extension (%x)", rc);
+		ConfigurationNode::logf(__PRETTY_FUNCTION__, ConfigurationNode::ERROR,"Error %x", rc );
 	}
 
 }
