@@ -30,7 +30,7 @@ void setup() {
 
 	Homie.setup();
 	bew_fsm.begin(controller, valves);
-	bew_fsm.onSwitch(atm_serial_debug::onSwitch);
+	bew_fsm.onSwitch();
 }
 
 void loop() {

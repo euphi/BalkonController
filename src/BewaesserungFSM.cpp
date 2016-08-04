@@ -10,6 +10,7 @@
 #include "ControllerNode.h"
 #include "ValveNode.h"
 #include "ConfigurationNode.h"
+#include "StreamLog.h"
 
 #include <EEPROM.h>
 
@@ -17,8 +18,6 @@ BewaesserungFSM::BewaesserungFSM()
 {
 	//class_label ="ABLAUF";
 	//timer.begin(this,ATM_COUNTER_OFF);
-	timer.set(ATM_COUNTER_OFF);
-}
 	timer.set(ATM_COUNTER_OFF);
 }
 
@@ -38,6 +37,7 @@ BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& v
 	for (uint_fast8_t i = S1; i <= S4; i++) {
 		uint16_t duration = 0;
 		EEPROM.get(i-1, duration);
+		duration+=500;
 		Serial.printf("Read EEPROM for state %x duration: %is\n.", i, duration);
 		state_duration[i-1] = duration;
 	}
@@ -45,9 +45,6 @@ BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& v
 	Machine::begin(state_table, ELSE);
 	mp_ctrl = &controller;
 	mp_valves = &valves;
-
-	return *this;
-}
 
 	return *this;
 }
@@ -101,18 +98,21 @@ void BewaesserungFSM::action(int id) {
 		mp_ctrl->PumpeOff();
 		timer.set(ATM_COUNTER_OFF);
 		break;
-	case -1:
-		return; // -1: No action
+	case ATM_NOP:
+	case ATM_SLEEP:
+	case ATM_ON_SWITCH:
+		return; // NOP/SLEEP/ON_SWITCH: No action
 	default:
 		ConfigurationNode::logf(__PRETTY_FUNCTION__, ConfigurationNode::ERROR,"Invalid id %x", id);
 		return;
 	}
+}
+
 BewaesserungFSM& BewaesserungFSM::onSwitch() {
-	  Machine::setTrace(&Serial, atm_serial_debug::trace, "Ablaufsteuerung\0EV_START\0EV_TIMER\0ELSE\0AUS\0S1\0S2\0S3\0S4" );
+	  Machine::setTrace(&sLog, atm_serial_debug::trace, "Ablaufsteuerung\0EV_START\0EV_TIMER\0ELSE\0AUS\0S1\0S2\0S3\0S4" );
 	  return *this;
 }
 
 
 
 BewaesserungFSM bew_fsm;
-_fsm;
