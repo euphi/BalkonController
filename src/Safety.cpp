@@ -22,6 +22,7 @@ void Safety::init() {
 	initialized = true;
 }
 
+
 void Safety::loop() {
 	uint16_t now = millis();
 //	if (now - m_last > 1000)
@@ -32,4 +33,3 @@ void Safety::loop() {
 //		Serial.println("not yet implemented");
 //	}
 }
-

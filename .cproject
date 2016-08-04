@@ -60,6 +60,7 @@
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif/libraries/Ticker"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif/libraries/Wire"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif/libraries/esp8266/src"/>
+									<listOptionValue builtIn="false" value="&quot;${HOME}/.platformio/lib/Automaton_ID545&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.922107295" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="F_CPU=80000000L"/>
@@ -242,6 +243,7 @@
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif/libraries/Ticker"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif/libraries/Wire"/>
 									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif/libraries/esp8266/src"/>
+									<listOptionValue builtIn="false" value="&quot;${HOME}/.platformio/lib/Automaton_ID545&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.507448554" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="F_CPU=80000000L"/>
@@ -369,17 +371,21 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Balkoncontroller.null.189551033" name="Balkoncontroller"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="0.910961921">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Upload"/>
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/esp12e"/>
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="0.910961921">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="0.910961921.1253356600">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
 </cproject>
