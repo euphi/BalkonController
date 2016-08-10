@@ -10,9 +10,10 @@
 
 SensorNode::SensorNode() :
 	HomieNode("Sensor", "sensor_t_p",
-		[](String property, String value) { return false; },
-		true),
+		[](String property, String value) { return false; }),
 	lastLoop8000ms(0) {
+
+	subscribeToAll();
 }
 
 void SensorNode::setup() {

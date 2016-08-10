@@ -9,24 +9,22 @@
 #include "ConfigurationNode.h"
 
 PCF8574 ioext(0x20);
-Safety safety(ioext);
+
+//Safety safety(ioext);
 
 ValveNode valves(ioext);
 RGBWNode ledstrip;
-SensorNode sensor;
+//SensorNode sensor;
 ControllerNode controller(ioext);
 
 void setup() {
-	safety.init();
+//	safety.init();
+	Serial.begin(115200);
+	Serial.println("Start");
+	Serial.flush();
+	delay(500);
 
 	Homie.disableResetTrigger();
-
-	// HomieNode derived Nodes
-	Homie.registerNode(ledstrip);
-	Homie.registerNode(valves);
-	Homie.registerNode(sensor);
-	Homie.registerNode(controller);
-	Homie.registerNode(config);
 
 	Homie.setup();
 	bew_fsm.begin(controller, valves);
@@ -35,7 +33,7 @@ void setup() {
 
 void loop() {
 	automaton.run();
-    safety.loop();
-//	bew_fsm.cycle();
+//    safety.loop();
+	bew_fsm.cycle();
 	Homie.loop();
 }

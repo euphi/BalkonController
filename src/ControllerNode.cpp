@@ -9,13 +9,14 @@
 #include "Homie.hpp"
 #include "BewaesserungFSM.h"
 #include "ConfigurationNode.h"
+#include "LoggerNode.h"
 
 ControllerNode::ControllerNode(PCF8574& ioext) :
 		HomieNode("Controller", "controller",
-				[](String property, String value) {return false;}, true),
+				[](String property, String value) {return false;}),
 		m_ioext(ioext), mode(Modes::Manual), mode_1run_saved_state(Modes::Invalid),
 		pumpe(false), valve(false) {
-
+	subscribeToAll();
 }
 
 
@@ -41,7 +42,7 @@ bool ControllerNode::startOneRun() {
 }
 
 
-bool ControllerNode::setMode(String& value) {
+bool ControllerNode::setMode(String const & value) {
 	int_fast8_t i = 0;
 	for (i = (int_fast8_t)Modes::Manual; i < (int_fast8_t)Modes::Last_Mode; i++)
 		if (value[0] == mode_char[i])
@@ -58,7 +59,7 @@ bool ControllerNode::setMode(String& value) {
 	return true;
 }
 
-bool ControllerNode::setPumpe(String& value) {
+bool ControllerNode::setPumpe(String const & value) {
 	if (mode == Modes::Manual) {
 		bool on = (value == "true");
 		PumpeSet(on);
@@ -69,7 +70,7 @@ bool ControllerNode::setPumpe(String& value) {
 	return true;
 }
 
-bool ControllerNode::setMainValve(String& value) {
+bool ControllerNode::setMainValve(String const & value) {
 	if (mode == Modes::Manual) {
 		bool on = (value == "true");
 		valve = on;
@@ -81,11 +82,13 @@ bool ControllerNode::setMainValve(String& value) {
 	return true;
 }
 
-bool ControllerNode::InputHandler(String property, String value) {
+bool ControllerNode::handleInput(String const &property, String const &value) {
 	Serial.printf(
 			"ControllerNode::InputHandler received  property %s (value=%s).\n",
 			property.c_str(), value.c_str());
+
 	uint_fast8_t i = 0;
+
 	for (i = (uint_fast8_t )Properties::Mode; i < (uint_fast8_t )Properties::LAST_Prop; i++) {
 		if (property.equals(PropString[i]))
 			break;
@@ -112,7 +115,7 @@ void ControllerNode::PumpeSet(bool on) {
 		Homie.setNodeProperty(*this, PropString[Properties::Pumpe], on?"true":"false");
 	}
 	else {
-		ConfigurationNode::logf(__PRETTY_FUNCTION__, ConfigurationNode::ERROR,"Error %x", rc );
+		LN.logf(__PRETTY_FUNCTION__, LoggerNode::ERROR,"Error %x", rc );
 	}
 
 }

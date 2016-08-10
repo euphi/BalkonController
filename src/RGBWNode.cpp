@@ -12,11 +12,10 @@
 const float RGBWNode::percent_to_pwm = PWMRANGE / 100;
 
 RGBWNode::RGBWNode() : 	HomieNode("LEDs", "RGBW") {
-	_subscribeToAll = true;
+	subscribeToAll();
 }
 
-
-bool RGBWNode::InputHandler(String property, String value) {
+bool RGBWNode::handleInput(String const &property, String const &value) {
 	Serial.printf("Striphandler received  property %s (value=%s).\n", property.c_str(), value.c_str());
 	int value_int = value.toInt();
 	uint_fast8_t id = R;

@@ -27,7 +27,7 @@ class RGBWNode: public HomieNode {
 	const char rgbw_id[4] = {'r', 'g', 'b', 'w'};
 	uint16_t rgbw_values[4] = { 0, 0, 0, 0 };
 
-    virtual bool InputHandler(String property, String value);
+    virtual bool handleInput(String const &property, String const &value);
 
 private:
     void updateLEDs() const;

@@ -10,6 +10,7 @@
 #include "ControllerNode.h"
 #include "ValveNode.h"
 #include "ConfigurationNode.h"
+#include "LoggerNode.h"
 #include "StreamLog.h"
 
 #include <EEPROM.h>
@@ -103,7 +104,7 @@ void BewaesserungFSM::action(int id) {
 	case ATM_ON_SWITCH:
 		return; // NOP/SLEEP/ON_SWITCH: No action
 	default:
-		ConfigurationNode::logf(__PRETTY_FUNCTION__, ConfigurationNode::ERROR,"Invalid id %x", id);
+		LN.logf(__PRETTY_FUNCTION__, LoggerNode::ERROR,"Invalid id %x", id);
 		return;
 	}
 }
