@@ -9,11 +9,11 @@
 #include "Homie.hpp"
 
 ValveNode::ValveNode(PCF8574& ioext): HomieNode("Ventil", "4Rel"), m_ioext(ioext), updateNeccessary(false) {
-	_subscribeToAll = true;
+	subscribeToAll();
 
 }
 
-bool ValveNode::InputHandler(String property, String value) {
+bool ValveNode::handleInput(String const &property, String const &value) {
 	Serial.printf("ValveNode::InputHandler received  property %s (value=%s).\n", property.c_str(), value.c_str());
 	bool value_bool = value.equals("true");
 

@@ -29,9 +29,9 @@ private:
 
 	PCF8574& m_ioext;
 
-	bool setMode(String& value);
-	bool setPumpe(String& value);
-	bool setMainValve(String& value);
+	bool setMode(String const & value);
+	bool setPumpe(String const & value);
+	bool setMainValve(String const & value);
 
 	bool startOneRun();
     void PumpeSet(bool on);
@@ -42,7 +42,7 @@ public:
 
 	virtual void loop();
 	virtual void setup();
-    virtual bool InputHandler(String property, String value);
+    virtual bool handleInput(String const &property, String const &value);
 
     void PumpeOn();
     void PumpeOff();

@@ -6,20 +6,15 @@
  */
 
 #include "StreamLog.h"
-#include "Homie.hpp"
-#include "ConfigurationNode.h"
+#include "LoggerNode.h"
 
 StreamLog::StreamLog() {
-	// TODO Auto-generated constructor stub
 
 }
 
 
 void StreamLog::PublishCurrentLogString() {
-	Serial.printf("MQTT-Logger **PCLS** %s (%d byte)\n", this->buffer, this->length());
-	Serial.flush();
-	config.log("SL", ConfigurationNode::INFO, *this);
-	Homie.setNodeProperty(config, "log", this->buffer, false);
+	LN.log("SL", LoggerNode::INFO, *this);
 	invalidate();
 }
 
@@ -27,6 +22,7 @@ void StreamLog::PublishCurrentLogString() {
 size_t StreamLog::write(const uint8_t *buffer, size_t size) {
 	size_t rc = Print::write(buffer, size);
 	if(this->operator [](this->length()-1) == '\n') {
+		this->remove(this->length()-1);
 		PublishCurrentLogString();
 	}
 	return rc;
