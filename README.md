@@ -3,7 +3,7 @@ ESP8266 Irrigation control with 4 + 1 valves, a pump and as bonus RGB/White LED-
 
 ## Software
 - Build with platformio. platformio.ini contains dependencies to necessary libs, except Homie.
-- This requires the latest GIT version from Homie (2.0 development)
+- This requires the latest GIT version of [Homie](https://github.com/marvinroger/homie-esp8266 (2.0 development))
 
 ## Hardware
 ### Overview
