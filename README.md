@@ -1,6 +1,10 @@
 # BalkonController
 ESP8266 Irrigation control with 4 + 1 valves, a pump and as bonus RGB/White LED-Strip
 
+## Software
+- Build with platformio. platformio.ini contains dependencies to necessary libs, except Homie.
+- This requires the latest GIT version from Homie (2.0 development)
+
 ## Hardware
 ### Overview
 - ESP8266 ESP-ADC DIL18 (http://wiki.in-circuit.de/index.php5?title=ESP8266EX)
