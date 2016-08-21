@@ -7,6 +7,7 @@
 #include "SensorNode.h"
 #include "ControllerNode.h"
 #include "ConfigurationNode.h"
+#include "Display.h"
 
 PCF8574 ioext(0x20);
 
@@ -29,6 +30,7 @@ void setup() {
 	Homie.setup();
 	bew_fsm.begin(controller, valves);
 	bew_fsm.onSwitch();
+	disp.setup();
 }
 
 void loop() {
@@ -36,4 +38,5 @@ void loop() {
 //    safety.loop();
 	bew_fsm.cycle();
 	Homie.loop();
+	disp.loop();
 }
