@@ -28,3 +28,6 @@
 *.app
 /.pioenvs/
 /lib/
+
+# Helpers
+/.piolibdeps/
