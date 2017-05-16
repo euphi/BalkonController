@@ -27,4 +27,6 @@
 *.out
 *.app
 /.pioenvs/
+/.piolibdeps/
 /lib/
+
