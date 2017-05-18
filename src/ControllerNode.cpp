@@ -12,11 +12,12 @@
 #include "LoggerNode.h"
 
 ControllerNode::ControllerNode(PCF8574& ioext) :
-		HomieNode("Controller", "controller",
-				[](String property, String value) {return false;}),
+		HomieNode("Controller", "controller"),
 		m_ioext(ioext), mode(Modes::Manual), mode_1run_saved_state(Modes::Invalid),
 		pumpe(false), valve(false) {
-	subscribeToAll();
+	for (int i = 0; i < LAST_Prop; i++) {
+		advertise(PropString[i].c_str()).settable();
+	}
 }
 
 
@@ -26,7 +27,7 @@ void ControllerNode::loop() {
 			Serial.println("OneRun finished()");
 			mode = mode_1run_saved_state;
 			mode_1run_saved_state = Modes::Invalid;
-		    Homie.setNodeProperty(*this, PropString[State], String(mode_char[mode]), true);
+			setProperty(PropString[State]).send(String(mode_char[mode]));
 		}
 	}
 }
@@ -54,7 +55,7 @@ bool ControllerNode::setMode(String const & value) {
 		startOneRun();
 	}
 	mode = (Modes)i;
-	Homie.setNodeProperty(*this, PropString[State], String(mode_char[mode]), true);
+	setProperty(PropString[State]).send(String(mode_char[mode]));
 	Serial.printf("Mode set to %c [%x].\n", mode_char[i], i);
 	return true;
 }
@@ -81,8 +82,7 @@ bool ControllerNode::setMainValve(String const & value) {
 	}
 	return true;
 }
-
-bool ControllerNode::handleInput(String const &property, String const &value) {
+bool ControllerNode::handleInput(const String  &property, const HomieRange& range, const String &value) {
 	Serial.printf(
 			"ControllerNode::InputHandler received  property %s (value=%s).\n",
 			property.c_str(), value.c_str());
@@ -112,7 +112,7 @@ void ControllerNode::PumpeSet(bool on) {
 	m_ioext.write(0, !on); // Ausgang invertiert
 	int rc = m_ioext.lastError();
 	if (rc==0) {
-		Homie.setNodeProperty(*this, PropString[Properties::Pumpe], on?"true":"false");
+		setProperty(PropString[Properties::Pumpe]).send(on?"true":"false");
 	}
 	else {
 		LN.logf(__PRETTY_FUNCTION__, LoggerNode::ERROR,"Error %x", rc );
@@ -124,7 +124,7 @@ void ControllerNode::ValveSet(bool on) {
 	m_ioext.write(1, on);
 	int rc = m_ioext.lastError();
 	if (rc==0) {
-		Homie.setNodeProperty(*this, PropString[Properties::MainValve], on?"true":"false");
+		setProperty(PropString[Properties::MainValve]).send(on?"true":"false");
 	}
 	else {
 		Serial.printf("ERROR writing MainValve on IO extension (%x)", rc);

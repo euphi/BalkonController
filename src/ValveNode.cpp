@@ -9,25 +9,28 @@
 #include "Homie.hpp"
 
 ValveNode::ValveNode(PCF8574& ioext): HomieNode("Ventil", "4Rel"), m_ioext(ioext), updateNeccessary(false) {
-	subscribeToAll();
+	advertiseRange("Valve", 1, 4).settable();
 
 }
 
-bool ValveNode::handleInput(String const &property, String const &value) {
+bool ValveNode::handleInput(const String  &property, const HomieRange& range, const String &value) {
 	Serial.printf("ValveNode::InputHandler received  property %s (value=%s).\n", property.c_str(), value.c_str());
 	bool value_bool = value.equals("true");
 
-	uint_fast8_t id = property[0]-'1'; // Number valves from 1 to 4
-	if (id >= 0 && id <= 3)
+	if (!property.equalsIgnoreCase("Valve")) return false;
+	if (!range.isRange) return false;
+
+	uint_fast8_t id = range.index;
+	if (id >= 1 && id <= 4)
 	{
-		m_valves[id] = value_bool;
+		m_valves[id-1] = value_bool;
 	}
 	else
 	{
 		return false;
 	}
 	updateValves();
-	PublishState(id+1);
+	PublishState(id);
 	return true;
 
 }
@@ -42,7 +45,7 @@ void ValveNode::PublishState(uint8_t id) const
 {
 	if (id<1 || id > 4) return;
 	String id_string(id);
-	Homie.setNodeProperty(*this, id_string, m_valves[id-1] ? "true":"false",true);
+	setProperty("Valve").setRange(id).send(m_valves[id-1] ? "true":"false");
 }
 
 

@@ -9,12 +9,15 @@
 #include "ConfigurationNode.h"
 #include "Display.h"
 
+#include <LoggerNode.h>
+
 PCF8574 ioext(0x20);
 
 //Safety safety(ioext);
 
 ValveNode valves(ioext);
-RGBWNode ledstrip;
+RGBWNode ledstrip("RGB");
+
 //SensorNode sensor;
 ControllerNode controller(ioext);
 

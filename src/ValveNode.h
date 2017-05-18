@@ -17,8 +17,7 @@
 
 class ValveNode: public HomieNode {
 
-
-	virtual bool handleInput(String const &property, String const &value);
+	virtual bool handleInput(const String  &property, const HomieRange& range, const String &value) override;
 
 private:
 	  std::array<bool, 4>  m_valves { { false, false, false, false } };

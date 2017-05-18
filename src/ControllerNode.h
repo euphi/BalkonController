@@ -42,7 +42,7 @@ public:
 
 	virtual void loop();
 	virtual void setup();
-    virtual bool handleInput(String const &property, String const &value);
+    virtual bool handleInput(const String  &property, const HomieRange& range, const String &value) override;
 
     void PumpeOn();
     void PumpeOff();

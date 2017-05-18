@@ -30,3 +30,5 @@
 /.piolibdeps/
 /lib/
 
+.pioenvs
+.piolibdeps
