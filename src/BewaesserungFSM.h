@@ -12,12 +12,12 @@
 #include <Automaton.h>
 
 class ControllerNode;
-class ValveNode;
+class RelaisNode;
 
 class BewaesserungFSM: public Machine {
 private:
 	ControllerNode* mp_ctrl;
-	ValveNode*	mp_valves;
+	RelaisNode*	mp_valves;
 public:
 	BewaesserungFSM();
 
@@ -35,7 +35,7 @@ public:
 
 	enum { ACT_S1, ACT_S2, ACT_S3, ACT_S4, ACT_S1_OFF, ACT_S2_OFF, ACT_S3_OFF, ACT_S4_OFF, ACT_OFF }; // ACTIONS
 
-	BewaesserungFSM& begin(ControllerNode& controller, ValveNode& valves);
+	BewaesserungFSM& begin(ControllerNode& controller, RelaisNode& valves);
 	int event(int id);
 	void action(int id);
 

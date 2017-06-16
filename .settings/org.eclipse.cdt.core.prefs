@@ -1,4 +1,9 @@
 eclipse.preferences.version=1
+environment/project/0.910961921.967959705/PATH/delimiter=\:
+environment/project/0.910961921.967959705/PATH/operation=replace
+environment/project/0.910961921.967959705/PATH/value=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/usr/games\:/usr/local/games\:/snap/bin
+environment/project/0.910961921.967959705/append=true
+environment/project/0.910961921.967959705/appendContributed=true
 environment/project/0.910961921/PATH/delimiter=\:
 environment/project/0.910961921/PATH/operation=replace
 environment/project/0.910961921/PATH/value=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/usr/games\:/usr/local/games\:/snap/bin

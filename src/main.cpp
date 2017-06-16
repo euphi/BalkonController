@@ -1,39 +1,67 @@
 #include <Homie.h>
 
-#include "pcf8574.h"
 #include "Safety.h"
-#include "ValveNode.h"
+//#include "ValveNode.h"
 #include "RGBWNode.h"
-#include "SensorNode.h"
 #include "ControllerNode.h"
 #include "ConfigurationNode.h"
-#include "Display.h"
 
+#include "BewaesserungFSM.h"
+
+#include "SensorNode.h"
+#include <RelaisNode.h>
 #include <LoggerNode.h>
 
-PCF8574 ioext(0x20);
 
 //Safety safety(ioext);
 
-ValveNode valves(ioext);
-RGBWNode ledstrip("RGB");
+//ValveNode valves(ioext);
+RGBWNode ledstrip("RGB", 15, 2, 0, 16);
+RGBWNode ledstri2("RGB2", 14, 12, 13);
 
-//SensorNode sensor;
-ControllerNode controller(ioext);
+ControllerNode controller;
+RelaisNode relais;
+SensorNode sensor;
+
+#include "buildnumber.h"
+#define FW_NAME "Balkoncontroller"
+#define FW_VERSION "4.0." BUILD_NUMBER
+
+/* Magic sequence for Autodetectable Binary Upload */
+const char *__FLAGGED_FW_NAME = "\xbf\x84\xe4\x13\x54" FW_NAME "\x93\x44\x6b\xa7\x75";
+const char *__FLAGGED_FW_VERSION = "\x6a\x3f\x3e\x0e\xe1" FW_VERSION "\xb0\x30\x48\xd4\x1a";
+/* End of magic sequence for Autodetectable Binary Upload */
+
+
+/* *** Ventile ***
+
+(von links nach rechts)
+  X3 - 4: ^14
+     - 3: ^15
+     - 2: ^16
+     - 1: ^13
+
+  Relais:
+  X9 - 1: 01
+     - 2: 02
+ ***************** */
 
 void setup() {
 //	safety.init();
-	Serial.begin(115200);
-	Serial.println("Start");
-	Serial.flush();
-	delay(500);
-
+	Homie_setFirmware(FW_NAME, FW_VERSION);
 	Homie.disableResetTrigger();
+	Homie.disableLedFeedback();
 
+	Serial.begin(74880);
+	Serial.println("Setup");
+	Serial.flush();
+
+	Homie.setLoggingPrinter(&Serial);
+	LN.setLoglevel(LoggerNode::DEBUG);
 	Homie.setup();
-	bew_fsm.begin(controller, valves);
+
+	bew_fsm.begin(controller, relais);
 	bew_fsm.onSwitch();
-	disp.setup();
 }
 
 void loop() {
@@ -41,5 +69,4 @@ void loop() {
 //    safety.loop();
 	bew_fsm.cycle();
 	Homie.loop();
-	disp.loop();
 }

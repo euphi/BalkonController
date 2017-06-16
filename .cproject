@@ -384,18 +384,399 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
+		<cconfiguration id="0.910961921.967959705">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.910961921.967959705" moduleId="org.eclipse.cdt.core.settings" name="Upload">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="Balkoncontroller" buildProperties="" description="Build + Upload" id="0.910961921.967959705" name="Upload" parent="org.eclipse.cdt.build.core.prefbase.cfg">
+					<folderInfo id="0.910961921.967959705." name="/" resourcePath="">
+						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.186426217" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="org.eclipse.cdt.build.core.prefbase.toolchain.186426217.432680486" name=""/>
+							<builder arguments="-f -c eclipse" cleanBuildTarget="run --target clean" command="platformio" id="org.eclipse.cdt.build.core.settings.default.builder.379693406" incrementalBuildTarget="run --target upload" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.817940847" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.905702744" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1351117373" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/tools/sdk/lwip/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/cores/esp8266"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/variants/nodemcu"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Homie/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Adafruit PN532_ID29"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ArduinoOTA"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266AVRISP/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266SSDP"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFiMesh/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266httpUpdate/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ethernet/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/GDBStub/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Hash/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SPI"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Servo/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SoftwareSerial"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/TFT_Touch_Shield_V2"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/esp8266/src"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.540088590" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ARDUINO=20300"/>
+									<listOptionValue builtIn="false" value="LWIP_OPEN_SRC"/>
+									<listOptionValue builtIn="false" value="F_CPU=80000000L"/>
+									<listOptionValue builtIn="false" value="__ets__"/>
+									<listOptionValue builtIn="false" value="ICACHE_FLASH"/>
+									<listOptionValue builtIn="false" value="PLATFORMIO=30300"/>
+									<listOptionValue builtIn="false" value="ESP8266"/>
+									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP8266"/>
+									<listOptionValue builtIn="false" value="ARDUINO_ESP8266_ESP12"/>
+									<listOptionValue builtIn="false" value="__cplusplus=201402L"/>
+									<listOptionValue builtIn="false" value="SENSORS_BMP180_ATTACHED="/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.236017395" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.708688302" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.995074202" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/tools/sdk/lwip/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/cores/esp8266"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/variants/nodemcu"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Homie/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Adafruit PN532_ID29"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ArduinoOTA"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266AVRISP/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266SSDP"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFiMesh/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266httpUpdate/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ethernet/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/GDBStub/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Hash/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SPI"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Servo/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SoftwareSerial"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/TFT_Touch_Shield_V2"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/esp8266/src"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.52371477" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ARDUINO=20300"/>
+									<listOptionValue builtIn="false" value="LWIP_OPEN_SRC"/>
+									<listOptionValue builtIn="false" value="F_CPU=80000000L"/>
+									<listOptionValue builtIn="false" value="__ets__"/>
+									<listOptionValue builtIn="false" value="ICACHE_FLASH"/>
+									<listOptionValue builtIn="false" value="PLATFORMIO=30300"/>
+									<listOptionValue builtIn="false" value="ESP8266"/>
+									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP8266"/>
+									<listOptionValue builtIn="false" value="ARDUINO_ESP8266_ESP12"/>
+									<listOptionValue builtIn="false" value="__cplusplus=201402L"/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.993048353" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.926875803" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.248682844" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/tools/sdk/lwip/include"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/cores/esp8266"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/variants/nodemcu"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Homie/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/HomieNodeCollection_ID1407/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Libs/homie-esp8266/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/ESP8266_SSD1306_ID562"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/Coding/ESP_Projects/Balkoncontroller/.piolibdeps/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Adafruit PN532_ID29"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ArduinoJson_ID64/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/AsyncMqttClient_ID346/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Automaton_ID545/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Bounce2_ID1106"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/ESPAsyncTCP_ID305/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/lib/Sensors_ID578/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ArduinoOTA"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266AVRISP/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPUpdateServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266SSDP"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFiMesh/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266httpUpdate/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ethernet/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/GDBStub/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Hash/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SD/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SPI"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Servo/src"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/SoftwareSerial"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/TFT_Touch_Shield_V2"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+									<listOptionValue builtIn="false" value="${HOME}/.platformio/packages/framework-arduinoespressif8266/libraries/esp8266/src"/>
+								</option>
+								<option id="org.eclipse.cdt.build.core.settings.holder.symbols.526996160" name="Symbols" superClass="org.eclipse.cdt.build.core.settings.holder.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="ARDUINO=20300"/>
+									<listOptionValue builtIn="false" value="LWIP_OPEN_SRC"/>
+									<listOptionValue builtIn="false" value="F_CPU=80000000L"/>
+									<listOptionValue builtIn="false" value="__ets__"/>
+									<listOptionValue builtIn="false" value="ICACHE_FLASH"/>
+									<listOptionValue builtIn="false" value="PLATFORMIO=30300"/>
+									<listOptionValue builtIn="false" value="ESP8266"/>
+									<listOptionValue builtIn="false" value="ARDUINO_ARCH_ESP8266"/>
+									<listOptionValue builtIn="false" value="ARDUINO_ESP8266_ESP12"/>
+									<listOptionValue builtIn="false" value="__cplusplus=201402L"/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.284310896" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Balkoncontroller.null.189551033" name="Balkoncontroller"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="0.910961921">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Upload">
+			<resource resourceType="PROJECT" workspacePath="/Balkoncontroller"/>
+		</configuration>
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/esp01"/>
 		</configuration>
@@ -460,5 +841,14 @@
 				<runAllBuilders>false</runAllBuilders>
 			</target>
 		</buildTargets>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="0.910961921">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="0.910961921.967959705">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>

@@ -11,11 +11,11 @@
 #include "ValveNode.h"
 #include "ConfigurationNode.h"
 #include "LoggerNode.h"
-#include "StreamLog.h"
 
 #include <EEPROM.h>
 
-BewaesserungFSM::BewaesserungFSM()
+BewaesserungFSM::BewaesserungFSM():
+mp_ctrl(NULL), mp_valves(NULL)
 {
 	//class_label ="ABLAUF";
 	//timer.begin(this,ATM_COUNTER_OFF);
@@ -25,7 +25,7 @@ BewaesserungFSM::BewaesserungFSM()
 uint16_t BewaesserungFSM::state_duration[S4] = {5000, 2000, 6000, 3000};
 
 
-BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& valves) {
+BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, RelaisNode& relais) {
 	const static state_t state_table[] PROGMEM = {
 	/*            ON_ENTER    ON_LOOP  ON_EXIT   EV_START	EV_TIMER	ELSE */
 	/* AUS  */		ACT_OFF,	-1,		-1,			S1,		-1,			-1,
@@ -45,7 +45,7 @@ BewaesserungFSM& BewaesserungFSM::begin(ControllerNode& controller, ValveNode& v
 
 	Machine::begin(state_table, ELSE);
 	mp_ctrl = &controller;
-	mp_valves = &valves;
+	mp_valves = &relais;
 
 	return *this;
 }
@@ -64,38 +64,38 @@ void BewaesserungFSM::action(int id) {
 	case ACT_S1:
 		duration = state_duration[S1-1];
 		mp_ctrl->PumpeOn();
-		if (duration > 0) mp_valves->On(1);
+		//if (duration > 0) mp_valves->On(1);
 		timer.set(duration);
 		break;
 	case ACT_S2:
 		duration = state_duration[S2-1];
-		if (duration > 0) mp_valves->On(2);
+//		if (duration > 0) mp_valves->On(2);
 		timer.set(duration);
 		break;
 	case ACT_S3:
 		duration = state_duration[S3-1];
-		if (duration > 0) mp_valves->On(3);
+//		if (duration > 0) mp_valves->On(3);
 		timer.set(duration);
 		break;
 	case ACT_S4:
 		duration = state_duration[S4-1];
-		if (duration > 0) mp_valves->On(4);
+//		if (duration > 0) mp_valves->On(4);
 		timer.set(duration);
 		break;
 	case ACT_S1_OFF:
-		mp_valves->Off(1);
+//		mp_valves->Off(1);
 		break;
 	case ACT_S2_OFF:
-		mp_valves->Off(2);
+//		mp_valves->Off(2);
 		break;
 	case ACT_S3_OFF:
-		mp_valves->Off(3);
+//		mp_valves->Off(3);
 		break;
 	case ACT_S4_OFF:
-		mp_valves->Off(4);
+//		mp_valves->Off(4);
 		break;
 	case ACT_OFF:
-		mp_valves->AllOff();
+//		mp_valves->AllOff();
 		mp_ctrl->PumpeOff();
 		timer.set(ATM_COUNTER_OFF);
 		break;
@@ -110,7 +110,7 @@ void BewaesserungFSM::action(int id) {
 }
 
 BewaesserungFSM& BewaesserungFSM::onSwitch() {
-	  Machine::setTrace(&sLog, atm_serial_debug::trace, "Ablaufsteuerung\0EV_START\0EV_TIMER\0ELSE\0AUS\0S1\0S2\0S3\0S4" );
+	  Machine::setTrace(&Serial, atm_serial_debug::trace, "Ablaufsteuerung\0EV_START\0EV_TIMER\0ELSE\0AUS\0S1\0S2\0S3\0S4" );
 	  return *this;
 }
 

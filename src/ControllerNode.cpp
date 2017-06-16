@@ -11,9 +11,9 @@
 #include "ConfigurationNode.h"
 #include "LoggerNode.h"
 
-ControllerNode::ControllerNode(PCF8574& ioext) :
+ControllerNode::ControllerNode() :
 		HomieNode("Controller", "controller"),
-		m_ioext(ioext), mode(Modes::Manual), mode_1run_saved_state(Modes::Invalid),
+		mode(Modes::Manual), mode_1run_saved_state(Modes::Invalid),
 		pumpe(false), valve(false) {
 	for (int i = 0; i < LAST_Prop; i++) {
 		advertise(PropString[i].c_str()).settable();
@@ -109,8 +109,9 @@ bool ControllerNode::handleInput(const String  &property, const HomieRange& rang
 }
 
 void ControllerNode::PumpeSet(bool on) {
-	m_ioext.write(0, !on); // Ausgang invertiert
-	int rc = m_ioext.lastError();
+	//m_ioext.write(0, !on); // Ausgang invertiert
+	//int rc = m_ioext.lastError();
+	int rc = 1;
 	if (rc==0) {
 		setProperty(PropString[Properties::Pumpe]).send(on?"true":"false");
 	}
@@ -121,8 +122,9 @@ void ControllerNode::PumpeSet(bool on) {
 }
 
 void ControllerNode::ValveSet(bool on) {
-	m_ioext.write(1, on);
-	int rc = m_ioext.lastError();
+	//m_ioext.write(1, on);
+	//int rc = m_ioext.lastError();
+	int rc=1;
 	if (rc==0) {
 		setProperty(PropString[Properties::MainValve]).send(on?"true":"false");
 	}
