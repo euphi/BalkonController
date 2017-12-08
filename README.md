@@ -5,10 +5,11 @@ ESP8266 Irrigation control with 4 + 1 valves, a pump and as bonus RGB/White LED-
 
 ## Software
 ### Building
-- Build with platformio. platformio.ini contains dependencies to necessary libs, except Homie.
+- Build with platformio. platformio.ini contains dependencies to necessary libs.
   - Configured to use with Eclipse
-  - On command line
-- This requires the latest GIT version of [Homie](https://github.com/marvinroger/homie-esp8266) (2.0 development) to be installed in lib/ subdirectory. To avoid mixing git version of BalkonController and Homie, I propose to install Homie in another direcory and just symlink this into lib/.
+  - or use command line:
+    `pio run`
+  
 
 ### Features
 - Able to switch valves and main pump and/or main valve over MQTT according to [Homie Convention](https://github.com/marvinroger/homie) using a PFC8574 I/O extension.

@@ -29,6 +29,7 @@
 /.pioenvs/
 /.piolibdeps/
 /lib/
+/scripts/
 
 .pioenvs
 .piolibdeps
