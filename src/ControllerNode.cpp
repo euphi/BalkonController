@@ -12,7 +12,8 @@
 #include "LoggerNode.h"
 
 ControllerNode::ControllerNode() :
-		HomieNode("Controller", "controller"),
+		//HomieNode("Controller", "controller"),
+		HomieNode("controller", "Controller", "irrigationctrl"),
 		mode(Modes::Manual), mode_1run_saved_state(Modes::Invalid),
 		pumpe(false), valve(false) {
 	for (int i = 0; i < LAST_Prop; i++) {
@@ -82,7 +83,9 @@ bool ControllerNode::setMainValve(String const & value) {
 	}
 	return true;
 }
-bool ControllerNode::handleInput(const String  &property, const HomieRange& range, const String &value) {
+//bool ControllerNode::handleInput(const String  &property, const HomieRange& range, const String &value) {
+bool ControllerNode::handleInput(const HomieRange& range, const String& property, const String& value) {
+
 	Serial.printf(
 			"ControllerNode::InputHandler received  property %s (value=%s).\n",
 			property.c_str(), value.c_str());

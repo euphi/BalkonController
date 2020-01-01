@@ -8,12 +8,17 @@
 #include "ValveNode.h"
 #include "Homie.hpp"
 
-ValveNode::ValveNode(PCF8574& ioext): HomieNode("Ventil", "4Rel"), m_ioext(ioext), updateNeccessary(false) {
-	advertiseRange("Valve", 1, 4).settable();
+ValveNode::ValveNode(PCF8574& ioext):
+	//HomieNode("Ventil", "4Rel"),
+	HomieNode("valve", "Ventile", "4xValve", true, 1, 4),
+	m_ioext(ioext), updateNeccessary(false) {
+	advertise("Valve").settable();
 
 }
 
-bool ValveNode::handleInput(const String  &property, const HomieRange& range, const String &value) {
+//bool ValveNode::handleInput(const String  &property, const HomieRange& range, const String &value) {
+bool ValveNode::handleInput(const HomieRange& range, const String& property, const String& value) {
+
 	Serial.printf("ValveNode::InputHandler received  property %s (value=%s).\n", property.c_str(), value.c_str());
 	bool value_bool = value.equals("true");
 

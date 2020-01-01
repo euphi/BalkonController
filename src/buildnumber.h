@@ -8,9 +8,8 @@
 #ifndef SRC_BUILDNUMBER_H_
 #define SRC_BUILDNUMBER_H_
 
-
-#define BUILD_NUMBER "44"
-#define COMMIT_COUNTER "0"
+#define COMMIT_COUNTER "2"
+#define BUILD_NUMBER "0"
 
 
 #endif /* SRC_BUILDNUMBER_H_ */

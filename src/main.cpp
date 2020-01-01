@@ -6,31 +6,28 @@
 #include "ControllerNode.h"
 #include "ConfigurationNode.h"
 
-#include "BewaesserungFSM.h"
+//#include "BewaesserungFSM.h"
 
-#include "SensorNode.h"
+//#include "SensorNode.h"
+#include <HomieBME280Node.h>
+
 #include <RelaisNode.h>
 #include <LoggerNode.h>
 
 
 #include "buildnumber.h"
 #define FW_NAME "Balkoncontroller"
-#define FW_VERSION "4." COMMIT_COUNTER "." BUILD_NUMBER
-
-/* Magic sequence for Autodetectable Binary Upload */
-const char *__FLAGGED_FW_NAME = "\xbf\x84\xe4\x13\x54" FW_NAME "\x93\x44\x6b\xa7\x75";
-const char *__FLAGGED_FW_VERSION = "\x6a\x3f\x3e\x0e\xe1" FW_VERSION "\xb0\x30\x48\xd4\x1a";
-/* End of magic sequence for Autodetectable Binary Upload */
+#define FW_VERSION "5." COMMIT_COUNTER "." BUILD_NUMBER
 
 
 //Safety safety(ioext);
 
-//ValveNode valves(ioext);
+LoggerNode LN;
 RGBWNode ledstrip( "RGB" , 15,  2,  0, 16);
 RGBWNode ledstrip2("RGB2", 14, 12, 13, RGBWNode::NOPIN);
 
 ControllerNode controller;
-SensorNode sensor;
+HomieBME280Node sensor;
 
 /* *** I/O Mapping *** *
 
@@ -53,7 +50,7 @@ SensorNode sensor;
 
  * ******************* */
 
-RelaisNode relais(0x0000, 0x0003, 0x0F00);
+RelaisNode relais(0x0000, 0x0003, 0x0F00);  // init all to zero (OFF), invert IO 1 and 2 (0x0003), and configure 9-12 (0x0F00) as INPUT
 
 void setup() {
 //	safety.init();
@@ -65,17 +62,19 @@ void setup() {
 	Serial.println("Setup");
 	Serial.flush();
 
+	Wire.begin(SDA, SCL);
+	Wire.setClockStretchLimit(1000);
 	Homie.setLoggingPrinter(&Serial);
 	LN.setLoglevel(LoggerNode::DEBUG);
 	Homie.setup();
 
-	bew_fsm.begin(controller, relais);
-	bew_fsm.onSwitch();
+	//bew_fsm.begin(controller, relais);
+	//bew_fsm.onSwitch();
 }
 
 void loop() {
-	automaton.run();
+	//automaton.run();
 //    safety.loop();
-	bew_fsm.cycle();
+	//bew_fsm.cycle();
 	Homie.loop();
 }
