@@ -23,8 +23,8 @@
 //Safety safety(ioext);
 
 LoggerNode LN;
-RGBWNode ledstrip( "RGB" , 15,  2,  0, 16);
-RGBWNode ledstrip2("RGB2", 14, 12, 13, RGBWNode::NOPIN);
+RGBWNode ledstrip( "RGB" , 15,  0,  2, 16);
+RGBWNode ledstrip2("RGB2", 12, 13, 14, RGBWNode::NOPIN);
 
 ControllerNode controller;
 HomieBME280Node sensor;
